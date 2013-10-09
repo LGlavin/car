@@ -29,4 +29,12 @@ scenario 'enters valid information to record' do
   expect(page).to have_content('Automobile was successfully recorded!')
   expect(Automobile.count).to eql(prev_count + 1)
   end
+ scenario 'enters invalid information to record' do
+    prev_count = Automobile.count
+    visit new_automobile_url
+
+    click_button 'Record'
+    expect(page).to_not have_content('Automobile was successfully recorded!')
+    expect(Automobile.count).to eql(prev_count)
+  end
 end
