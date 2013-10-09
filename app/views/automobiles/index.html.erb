@@ -1,0 +1,31 @@
+<%= notice %></p>
+<h1>Listing automobiles</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Color</th>
+      <th>Year</th>
+      <th>Mileage</th>
+      <th>Description</th>
+      <th>Manufactuer ID</th>
+      
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @automobiles.each do |automobile| %>
+      <tr>
+        <td><%= automobile.color %></td>
+        <td><%= automobile.year %></td>
+        <td><%= automobile.mileage %></td>
+        <td><%= automobile.description %></td>
+        <td><%= automobile.manufactuer_id %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New automobile', new_automobile_path %>

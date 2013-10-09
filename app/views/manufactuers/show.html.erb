@@ -1,0 +1,28 @@
+<%= notice %></p>
+
+<h1>Listing Manufactuers</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Country</th>
+      
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @manufactuers.each do |manufactuer| %>
+      <tr>
+        <td><%= manufactuer.name %></td>
+        <td><%= manufactuer.country %></td>
+       
+        <td><%= link_to 'Delete', manufactuer, method: :delete, data: { confirm: 'Are you sure you want to delete this manufactuer?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Manufactuer', new_manufactuer_path %>

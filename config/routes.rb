@@ -1,4 +1,6 @@
 Car::Application.routes.draw do
+  resources :manufactuers
+
   resources :automobiles
 
   # The priority is based upon order of creation: first created -> highest priority.
