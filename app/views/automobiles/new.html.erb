@@ -1,0 +1,43 @@
+
+
+<%= form_for @automobile do |f| %>
+
+<% if @automobile.errors.any? %>
+  <div id="error_explanation">
+    <h2><%= pluralize(@automobile.errors.count, "error") %> prohibited this event from being saved:</h2>
+
+    <ul>
+    <% @automobile.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+    </ul>
+  </div>
+<% end %>
+
+<div class="field">
+  <%= f.label :color %><br />
+  <%= f.text_field :color %>
+</div>
+
+<div class="field">
+  <%= f.label :year %><br />
+  <%= f.text_field :year %>
+</div>
+
+
+<div class="field">
+  <%= f.label :mileage %><br />
+  <%= f.text_field :mileage%>
+</div>
+
+
+<div class="field">
+  <%= f.label :description %><br />
+  <%= f.text_field :description %>
+</div>
+
+<div class="actions">
+  <%= f.submit 'Record'%>
+</div>
+
+<% end %>

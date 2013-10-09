@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-feature 'Recording a car listing', %Q{
+feature 'Recording a automobile listing', %Q{
 
 As a car salesperson
 I want to record a newly acquired car
@@ -19,14 +19,14 @@ So that I can list it in my lost
 
 scenario 'enters valid information to record' do
   prev_count = Automobile.count
-  visit new_car_url
+  visit new_automobile_url
   fill_in 'Color', with: 'red'
   fill_in 'Year', with: '1984'
   fill_in 'Mileage', with: '243,000'
   fill_in 'Description', with: 'mint condition'
 
   click_button 'Record'
-  expect(page).to have_content('Car was successfully recorded!')
+  expect(page).to have_content('Automobile was successfully recorded!')
   expect(Automobile.count).to eql(prev_count + 1)
   end
 end
